@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../AppLayers/Streaming/Overseer.dart';
 import '../utils/colors.dart';
 
 class NotificationWidget extends StatelessWidget {
@@ -24,7 +25,7 @@ class NotificationWidget extends StatelessWidget {
                   offset: Offset(0, 0), // changes position of shadow
                 ),
               ],
-              color: Colors.white,
+              color: Overseer.theme?AppColors.dimcolor:Colors.white,
               borderRadius: BorderRadius.circular(20.r)
           ),
           child: Row(
@@ -33,8 +34,8 @@ class NotificationWidget extends StatelessWidget {
                 margin: EdgeInsets.only(left: 10.w),
                 height: 10.h,
                 width: 10.w,
-                decoration: const BoxDecoration(
-                    color: AppColors.browncolor,
+                decoration:  BoxDecoration(
+                    color: Overseer.theme?AppColors.browncolor1:AppColors.browncolor,
                     shape: BoxShape.circle
                 ),
               ),
@@ -61,7 +62,7 @@ class NotificationWidget extends StatelessWidget {
                 offset: Offset(0, 0), // changes position of shadow
               ),
             ],
-            color: Colors.white,
+            color:Overseer.theme?AppColors.dimcolor: Colors.white,
             borderRadius: BorderRadius.circular(20.r),
           ),
           child: Row(
@@ -70,8 +71,8 @@ class NotificationWidget extends StatelessWidget {
                 margin: EdgeInsets.only(left: 10.w),
                 height: 10.h,
                 width: 10.w,
-                decoration: const BoxDecoration(
-                    color: AppColors.browncolor,
+                decoration:  BoxDecoration(
+                    color: Overseer.theme?AppColors.browncolor1:AppColors.browncolor,
                     shape: BoxShape.circle
                 ),
               ),

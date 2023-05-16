@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
-import '../pages/medical_services/doctor_detail_screen.dart';
+import '../AppLayers/Streaming/Overseer.dart';
+import '../pages/Users/medical_services/doctor_detail_screen.dart';
 import '../utils/colors.dart';
 
 class DoctorList extends StatelessWidget {
@@ -26,7 +26,7 @@ class DoctorList extends StatelessWidget {
                 offset: Offset(0, 0), // changes position of shadow
               ),
             ],
-            color: Colors.white,
+            color: Overseer.theme?AppColors.dimcolor:Colors.white,
             borderRadius: BorderRadius.circular(20.r),
           ),
           child: Padding(
@@ -35,7 +35,7 @@ class DoctorList extends StatelessWidget {
               children: [
                 ListTile(
                   title: Text("Dr Iftikhar Ahmed",
-                    style: TextStyle(color: AppColors.blackcolor,fontSize: 14.sp,fontWeight: FontWeight.w600),),
+                    style: TextStyle(color:Overseer.theme?Colors.white: AppColors.blackcolor,fontSize: 14.sp,fontWeight: FontWeight.w600),),
                   subtitle: Text("Urologist",
                     style: TextStyle(color:Colors.grey,fontSize: 12.sp,fontWeight: FontWeight.w400),),
                   trailing: Image.asset("assets/image9.png",height: 50.h,width: 50.w,),
@@ -51,7 +51,7 @@ class DoctorList extends StatelessWidget {
                             style: TextStyle(color:Colors.grey[400],fontSize: 12.sp,fontWeight: FontWeight.w500)),
                         SizedBox(height: 10.h,),
                         Text("1,800",
-                            style: TextStyle(color:AppColors.blackcolor,fontSize: 15.sp,fontWeight: FontWeight.w500))
+                            style: TextStyle(color:Overseer.theme?Colors.white:AppColors.blackcolor,fontSize: 15.sp,fontWeight: FontWeight.w500))
 
                       ],
                     ),
@@ -61,7 +61,7 @@ class DoctorList extends StatelessWidget {
                             style: TextStyle(color:Colors.grey[400],fontSize: 12.sp,fontWeight: FontWeight.w500)),
                         SizedBox(height: 10.h,),
                         Text("Rawalpindi",
-                            style: TextStyle(color:AppColors.blackcolor,fontSize: 15.sp,fontWeight: FontWeight.w500))
+                            style: TextStyle(color:Overseer.theme?Colors.white:AppColors.blackcolor,fontSize: 15.sp,fontWeight: FontWeight.w500))
 
                       ],
                     ),
@@ -71,8 +71,7 @@ class DoctorList extends StatelessWidget {
                             style: TextStyle(color:Colors.grey[400],fontSize: 12.sp,fontWeight: FontWeight.w500)),
                         SizedBox(height: 10.h,),
                         Text("4.8",
-                            style: TextStyle(color:AppColors.blackcolor,fontSize: 15.sp,fontWeight: FontWeight.w500))
-
+                            style: TextStyle(color:Overseer.theme?Colors.white:AppColors.blackcolor,fontSize: 15.sp,fontWeight: FontWeight.w500))
                       ],
                     )
                   ],
@@ -84,12 +83,12 @@ class DoctorList extends StatelessWidget {
                       height: 40.h,
                       width: 80.w,
                       decoration: BoxDecoration(
-                          color: AppColors.greencolor,
+                          color: Overseer.theme?Colors.white:AppColors.greencolor,
                           borderRadius: BorderRadius.circular(10.r)
                       ),
                       child: Center(
                         child: Text("Contact",
-                          style: TextStyle(color:Colors.white,fontSize: 14.sp,fontWeight: FontWeight.w400),),
+                          style: TextStyle(color:Overseer.theme?Colors.black:Colors.white,fontSize: 14.sp,fontWeight: FontWeight.w400),),
                       ),
                     ),
                     SizedBox(width: 10.w,),

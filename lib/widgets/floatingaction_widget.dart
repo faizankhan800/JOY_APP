@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:journey_of_you/utils/colors.dart';
 import 'package:simple_speed_dial/simple_speed_dial.dart';
 
-import '../pages/chat/add_friend_screen.dart';
-import '../pages/chat/friend_request_screen.dart';
-
+import '../pages/Users/chat/add_friend_screen.dart';
+import '../pages/Users/chat/friend_request_screen.dart';
 class FloatButton extends StatefulWidget {
   const FloatButton({Key? key,}) : super(key: key);
 
@@ -25,7 +23,6 @@ class _FloatButtonState extends State<FloatButton> {
     return SpeedDial(
       labelsBackgroundColor: AppColors.secondarycolor,
         labelsStyle: TextStyle(color: Colors.white,fontSize: 12.sp,fontWeight: FontWeight.w400),
-        child:   Icon(Icons.message_rounded,color: Colors.white,size: 20,),
         speedDialChildren: <SpeedDialChild>[
           SpeedDialChild(
             child: const Icon(Icons.person,color: Colors.white,),
@@ -35,7 +32,7 @@ class _FloatButtonState extends State<FloatButton> {
             onPressed: () {
 
               setState(() {
-                Get.to(AddFriendScreen());
+                Get.to(const AddFriendScreen());
               });
             },
           ),
@@ -47,7 +44,7 @@ class _FloatButtonState extends State<FloatButton> {
 
             onPressed: () {
               setState(() {
-                Get.to(RequestScreen());
+                Get.to(const RequestScreen());
               });
             },
           ),
@@ -57,6 +54,7 @@ class _FloatButtonState extends State<FloatButton> {
         closedBackgroundColor:AppColors.browncolor,
 
       openBackgroundColor: AppColors.secondarycolor,
+        child:   const Icon(Icons.message_rounded,color: Colors.white,size: 20,),
       );
 
   }

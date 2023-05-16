@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../AppLayers/Streaming/Overseer.dart';
+import '../utils/colors.dart';
+
 class SearchTextField extends StatelessWidget {
   const SearchTextField({Key? key}) : super(key: key);
 
@@ -12,10 +15,11 @@ class SearchTextField extends StatelessWidget {
       height: 50.h,
       width: 368.w,
       child: TextField(
+        style: TextStyle(color:Overseer.theme?AppColors.lightcolor:AppColors.blackcolor),
         controller: searchController,
         decoration:  InputDecoration(
             suffixIcon: const Icon(Icons.search,size: 20,),
-            fillColor: Colors.white,
+            fillColor: Overseer.theme?AppColors.dimcolor:Colors.white,
             filled: true,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20.r),

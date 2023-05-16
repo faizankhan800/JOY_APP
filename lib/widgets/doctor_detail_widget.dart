@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../AppLayers/Streaming/Overseer.dart';
 import '../utils/colors.dart';
 
 class DoctorDetailWidget extends StatelessWidget {
@@ -24,7 +25,7 @@ class DoctorDetailWidget extends StatelessWidget {
                   offset: Offset(0, 0), // changes position of shadow
                 ),
               ],
-              color: Colors.white,
+              color:Overseer.theme?AppColors.dimcolor: Colors.white,
               borderRadius: BorderRadius.circular(20.r)
           ),
           child: Column(
@@ -33,7 +34,7 @@ class DoctorDetailWidget extends StatelessWidget {
                 leading: Image.asset("assets/image3.png",height: 50.h,width: 50.w,),
                 title: Text("Aida Bugg",
                     style: TextStyle(
-                        color: Colors.black,
+                        color: Overseer.theme?Colors.white:Colors.black,
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w400
                     )
@@ -56,10 +57,10 @@ class DoctorDetailWidget extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Icon(Icons.star,color: AppColors.secondarycolor,size: 8,),
+                      const Icon(Icons.star,color: AppColors.secondarycolor,size: 8,),
                       Text("5.0",
                         style: TextStyle(
-                            color: AppColors.blackcolor,
+                            color:Colors.white,
                             fontSize: 8.sp,
                             fontWeight: FontWeight.w500
                         ),

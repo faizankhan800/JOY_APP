@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../AppLayers/Streaming/Overseer.dart';
 import '../utils/colors.dart';
 
 class NotificationList extends StatelessWidget {
@@ -25,7 +26,7 @@ class NotificationList extends StatelessWidget {
                   offset: Offset(0, 0), // changes position of shadow
                 ),
               ],
-              color: Colors.white,
+              color: Overseer.theme?AppColors.dimcolor:Colors.white,
               borderRadius: BorderRadius.circular(20.r)
           ),
           child: Row(
@@ -53,7 +54,7 @@ class NotificationList extends StatelessWidget {
                 offset: Offset(0, 0), // changes position of shadow
               ),
             ],
-            color: Colors.white,
+            color: Overseer.theme?AppColors.dimcolor:Colors.white,
             borderRadius: BorderRadius.circular(10.r),
           ),
           child: Row(

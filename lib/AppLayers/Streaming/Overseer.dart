@@ -1,5 +1,7 @@
 
-import '../../pages/auth/login/login_manager.dart';
+
+
+import '../../pages/Users/auth/login/login_manager.dart';
 
 class Overseer {
   Map<dynamic, dynamic> repository = {};
@@ -60,7 +62,7 @@ class Overseer {
   static bool isOngoingSuccess = false;
   static bool loading=true;
   static String userName = "";
-
+  static bool theme=false;
   // cart values
 
   Overseer() {

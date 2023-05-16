@@ -5,7 +5,7 @@ import '../utils/colors.dart';
 
 class RegisterWidget extends StatelessWidget {
   final String text;
-  final Gradient color;
+  final Color color;
   const RegisterWidget({Key? key,required this.text,required this.color}) : super(key: key);
 
   @override
@@ -15,7 +15,7 @@ class RegisterWidget extends StatelessWidget {
       width: 308.w,
       height: 50.h,
       decoration: BoxDecoration(
-          gradient:color,
+          color:color,
           borderRadius: BorderRadius.circular(20.r)
       ),
       child: Center(

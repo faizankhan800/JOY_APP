@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../AppLayers/Streaming/Overseer.dart';
 import '../utils/colors.dart';
 
 class CartWidget extends StatelessWidget {
@@ -24,7 +25,7 @@ class CartWidget extends StatelessWidget {
                 offset: Offset(0, 0), // changes position of shadow
               ),
             ],
-            color: Colors.white,
+            color: Overseer.theme?AppColors.dimcolor:Colors.white,
             borderRadius: BorderRadius.circular(20.r)
         ),
         child:Padding(
@@ -39,7 +40,7 @@ class CartWidget extends StatelessWidget {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Kate",style: TextStyle(color: AppColors.blackcolor,fontSize: 14.sp,fontWeight: FontWeight.w600),),
+                      Text("Kate",style: TextStyle(color: Overseer.theme?Colors.white:AppColors.blackcolor,fontSize: 14.sp,fontWeight: FontWeight.w600),),
                       SizedBox(height: 5.h,),
                       Text(subtitle,style: TextStyle(color: Colors.grey,fontSize: 12.sp,fontWeight: FontWeight.w500))
                     ],
@@ -50,7 +51,7 @@ class CartWidget extends StatelessWidget {
               ),
               SizedBox(height: 20.h,),
               Text(text,
-                style: TextStyle(color: Colors.black,fontSize: 16.sp,fontWeight: FontWeight.w600),
+                style: TextStyle(color: Overseer.theme?Colors.white:Colors.black,fontSize: 16.sp,fontWeight: FontWeight.w600),
 
               ),
               SizedBox(height: 15.h,),
@@ -58,14 +59,14 @@ class CartWidget extends StatelessWidget {
               SizedBox(height: 15.h,),
               Row(
                 children: [
-                  CircleAvatar(radius: 15.r,backgroundColor: AppColors.browncolor,
+                  CircleAvatar(radius: 15.r,backgroundColor: Overseer.theme?AppColors.browncolor1:AppColors.browncolor,
                     child: Icon(Icons.thumb_up_off_alt,size: 10,color: Colors.white,),),
                   SizedBox(width: 10.w,),
                   Text("20K Likes",
                     style: TextStyle(color: Colors.grey,fontSize: 10.sp,fontWeight: FontWeight.w400),
                   ),
                   Spacer(),
-                  CircleAvatar(radius: 15.r,backgroundColor: AppColors.browncolor,
+                  CircleAvatar(radius: 15.r,backgroundColor:Overseer.theme?AppColors.browncolor1: AppColors.browncolor,
                     child: Icon(Icons.message,size: 10,color: Colors.white,),),
 
                 ],

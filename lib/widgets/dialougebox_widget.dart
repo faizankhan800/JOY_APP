@@ -2,25 +2,21 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:journey_of_you/widgets/payment_method_widget.dart';
-
-import '../pages/payment/payment_screen.dart';
+import '../AppLayers/Streaming/Overseer.dart';
+import '../pages/Users/payment/payment_screen.dart';
 import '../utils/colors.dart';
 
 void AlertBox(BuildContext context) {
   List payment=['Credit Card','PayPal','Easypaisa'];
 List url=['assets/image20.png','assets/image21.png','assets/image22.png'];
 int position=0;
-  bool valuefirst = false;
-  bool valuesecond = false;
-
   showDialog(
     context: context,
     builder: (BuildContext context) {
       return StatefulBuilder(
         builder:(BuildContext context, StateSetter setState){return Dialog(
           elevation: 0,
-          backgroundColor: AppColors.bgcolor,
+          backgroundColor: Overseer.theme?AppColors.dimcolor:AppColors.bgcolor,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10.r)),
           child: Container(
@@ -33,7 +29,7 @@ int position=0;
                 children: [
                   Text("Payment Methods",
                     style: TextStyle(
-                        color: AppColors.blackcolor,
+                        color: Overseer.theme?Colors.white:AppColors.blackcolor,
                         fontSize: 18.sp,
                         fontWeight: FontWeight.w600
                     ),),
@@ -65,7 +61,7 @@ int position=0;
                           height: 60.h,
                           width: 328.w,
                           decoration: BoxDecoration(
-                              color: AppColors.lightcolor,
+                              color:Overseer.theme?AppColors.blackcolor: AppColors.lightcolor,
                               borderRadius: BorderRadius.circular(10.r)
                           ),
                           child: Row(
@@ -80,8 +76,8 @@ int position=0;
                                     fontWeight: FontWeight.w400
                                 ),),
                               Checkbox(
-                                checkColor: Colors.white,
-                                activeColor: Colors.red,
+                                checkColor: Colors.grey,
+                                activeColor: Overseer.theme?AppColors.darkonecolor:Colors.red,
                                 shape: CircleBorder(),
                                 value: isSelect,
                                 onChanged: ( value) {
@@ -131,7 +127,7 @@ int position=0;
                             height: 41.h,
                             width: 120.w,
                             decoration: BoxDecoration(
-                                gradient: AppColors.Gardient3(),
+                                gradient:Overseer.theme?AppColors.GardientD1(): AppColors.Gardient3(),
                                 borderRadius: BorderRadius.circular(15.r)
                             ),
                             child: Center(

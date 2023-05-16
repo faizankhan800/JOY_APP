@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:journey_of_you/AppLayers/Streaming/Overseer.dart';
 
 import '../utils/colors.dart';
 
@@ -25,7 +26,7 @@ class FriendChatWidget extends StatelessWidget {
                   offset: Offset(0, 0), // changes position of shadow
                 ),
               ],
-              color: Colors.white,
+              color: Overseer.theme?AppColors.dimcolor:Colors.white,
               borderRadius: BorderRadius.circular(20.r)
           ),
           child: Row(
@@ -35,7 +36,7 @@ class FriendChatWidget extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Faizan Khan",style: TextStyle(color: AppColors.blackcolor,fontSize: 14.sp,fontWeight: FontWeight.w600),),
+                  Text("Faizan Khan",style: TextStyle(color:Overseer.theme?Colors.white: AppColors.blackcolor,fontSize: 14.sp,fontWeight: FontWeight.w600),),
                   SizedBox(height: 5.h,),
                   Text("How are you?",style: TextStyle(color: Colors.grey,fontSize: 12.sp,fontWeight: FontWeight.w500))
                 ],
@@ -47,7 +48,7 @@ class FriendChatWidget extends StatelessWidget {
                 children: [
                   Text("9:18 am",style: TextStyle(color:Colors.grey,fontSize: 10.sp,fontWeight: FontWeight.w400)),
                   SizedBox(height: 6.h,),
-                  CircleAvatar(radius: 10.r,child: Text("1",style: TextStyle(fontSize: 10.sp,fontWeight: FontWeight.w500,color: Colors.white),),backgroundColor:AppColors.secondarycolor)
+                  CircleAvatar(radius: 10.r,child: Text("1",style: TextStyle(fontSize: 10.sp,fontWeight: FontWeight.w500,color: Colors.white),),backgroundColor:Overseer.theme?AppColors.browncolor1:AppColors.secondarycolor)
                 ],
               )
 
@@ -69,7 +70,7 @@ class FriendChatWidget extends StatelessWidget {
                   offset: Offset(0, 0), // changes position of shadow
                 ),
               ],
-              color: Colors.white,
+              color:Overseer.theme?AppColors.dimcolor: Colors.white,
               borderRadius: BorderRadius.circular(20.r)
           ),
           child: Row(
@@ -79,7 +80,7 @@ class FriendChatWidget extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Aidaa Bug",style: TextStyle(color: AppColors.blackcolor,fontSize: 14.sp,fontWeight: FontWeight.w600),),
+                  Text("Aidaa Bug",style: TextStyle(color: Overseer.theme?Colors.white:AppColors.blackcolor,fontSize: 14.sp,fontWeight: FontWeight.w600),),
                   SizedBox(height: 5.h,),
                   Text("Hello",style: TextStyle(color: Colors.grey,fontSize: 12.sp,fontWeight: FontWeight.w500))
                 ],

@@ -1,19 +1,29 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
-import '../pages/user_setting/user_setting_screen.dart';
+import '../AppLayers/Streaming/Overseer.dart';
+import '../main.dart';
+import '../pages/Users/user_setting/user_setting_screen.dart';
+import '../theme/theme_manager.dart';
 
-class BarWidget extends StatelessWidget {
+ThemeManager _themeManager = ThemeManager();
+
+class BarWidget extends StatefulWidget {
   final String title;
   final String subtitle;
   
   const BarWidget({Key? key, required this.title,required this.subtitle}) : super(key: key);
 
   @override
+  State<BarWidget> createState() => _BarWidgetState();
+}
+
+class _BarWidgetState extends State<BarWidget> {
+  @override
   Widget build(BuildContext context) {
-    return Column(
+    return  Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
           Row(
@@ -23,15 +33,28 @@ class BarWidget extends StatelessWidget {
                 onTap: (){
                   Get.to(const UserSettingScreen());
                 },
-                child: const Icon(Icons.settings,size: 20,)),
+                child:  Icon(Icons.settings,size: 20,color: Overseer.theme?Colors.white:Colors.black,)),
             Image.asset("assets/logo.png",height: 29.h,width: 63.w,),
-            const Icon(Icons.light_mode_outlined,size: 20,)
+            InkWell(
+              onTap: (){
+                Overseer.theme=!Overseer.theme;
+                print('rrr${Overseer.theme}rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr');
+
+                setState(() {
+                  _themeManager.toggleTheme(Overseer.theme);
+
+                });
+
+
+              },
+              child:Overseer.theme? Icon(Icons.light_mode_outlined,color: Colors.white,):Icon(Icons.light_mode_outlined,color: Colors.black,),)
           ],
         ),
           SizedBox(height: 45.h,),
-          Text(title,style: TextStyle(color: Colors.black,fontSize: 24.sp,fontWeight: FontWeight.w600),),
-          Text(subtitle,style: TextStyle(color: Colors.grey,fontSize: 14.sp,fontWeight: FontWeight.w400),),
+          Text(widget.title,style: TextStyle(color: Overseer.theme?Colors.white:Colors.black,fontSize: 24.sp,fontWeight: FontWeight.w600),),
+          Text(widget.subtitle,style: TextStyle(color:Overseer.theme?Colors.white: Colors.grey,fontSize: 14.sp,fontWeight: FontWeight.w400),),
       ],
     );
+
   }
 }

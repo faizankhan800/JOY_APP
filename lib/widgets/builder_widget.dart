@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:journey_of_you/AppLayers/Streaming/Overseer.dart';
 
 import '../utils/colors.dart';
 
@@ -17,7 +18,7 @@ class BuilderWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(text,
-              style: TextStyle(color: AppColors.blackcolor,fontSize: 18.sp,fontWeight: FontWeight.w600),),
+              style: TextStyle(color:Overseer.theme?AppColors.lightcolor:AppColors.blackcolor,fontSize: 18.sp,fontWeight: FontWeight.w600),),
             Text("See All",
               style: TextStyle(color: Colors.grey,fontSize: 14.sp,fontWeight: FontWeight.w400),)
           ],),
@@ -43,7 +44,7 @@ class BuilderWidget extends StatelessWidget {
                         ),
                       ],
 
-                      color: Colors.white,
+                      color: Overseer.theme?AppColors.dimcolor:Colors.white,
                       borderRadius: BorderRadius.circular(10.r)
                   ),
                   child: Column(
@@ -64,7 +65,7 @@ class BuilderWidget extends StatelessWidget {
                               children: [
                                 Icon(Icons.star,color: AppColors.secondarycolor,size: 10,),
 
-                                Text("5.0",style: TextStyle(color: AppColors.blackcolor,fontSize: 10.sp,fontWeight: FontWeight.w500),),
+                                Text("5.0",style: TextStyle(color: Colors.white,fontSize: 10.sp,fontWeight: FontWeight.w500),),
                               ],
                             ),
                           )
@@ -72,7 +73,7 @@ class BuilderWidget extends StatelessWidget {
                       ),
                       SizedBox(height: 20.h,),
                       Text("Dr.Arshad",
-                        style: TextStyle(color: AppColors.blackcolor,fontSize: 14.sp,fontWeight: FontWeight.w500),),
+                        style: TextStyle(color: Overseer.theme?Colors.white:AppColors.blackcolor,fontSize: 14.sp,fontWeight: FontWeight.w500),),
                       Text("Urologist",
                         style: TextStyle(color: Colors.grey,fontSize: 12.sp,fontWeight: FontWeight.w400),)
                     ],
@@ -85,7 +86,7 @@ class BuilderWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(subtext,
-              style: TextStyle(color: AppColors.blackcolor,fontSize: 18.sp,fontWeight: FontWeight.w600),),
+              style: TextStyle(color: Overseer.theme?AppColors.lightcolor:AppColors.blackcolor,fontSize: 18.sp,fontWeight: FontWeight.w600),),
             Text("See All",
               style: TextStyle(color: Colors.grey,fontSize: 14.sp,fontWeight: FontWeight.w400),)
           ],),
@@ -110,7 +111,7 @@ class BuilderWidget extends StatelessWidget {
                           offset: Offset(0, 0), // changes position of shadow
                         ),
                       ],
-                      color: Colors.white,
+                      color:Overseer.theme?AppColors.dimcolor: Colors.white,
                       borderRadius: BorderRadius.circular(10.r)
                   ),
                   child: Column(
@@ -123,7 +124,7 @@ class BuilderWidget extends StatelessWidget {
                       ),
                       SizedBox(height: 20.h,),
                       Text("CareFirst",
-                        style: TextStyle(color: AppColors.blackcolor,fontSize: 14.sp,fontWeight: FontWeight.w500),),
+                        style: TextStyle(color:Overseer.theme?Colors.white: AppColors.blackcolor,fontSize: 14.sp,fontWeight: FontWeight.w500),),
                       Text("Rawalpindi",
                         style: TextStyle(color: Colors.grey,fontSize: 12.sp,fontWeight: FontWeight.w400),)
                     ],

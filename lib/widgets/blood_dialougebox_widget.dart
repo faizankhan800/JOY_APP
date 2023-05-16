@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import '../AppLayers/Streaming/Overseer.dart';
 import '../utils/colors.dart';
 
 void BloodAlertBox(BuildContext context) {
@@ -13,7 +14,7 @@ void BloodAlertBox(BuildContext context) {
       return StatefulBuilder(
         builder:(context,setstate)=> Dialog(
           elevation: 0,
-          backgroundColor: AppColors.bgcolor,
+          backgroundColor: Overseer.theme?AppColors.dimcolor:AppColors.bgcolor,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.r)),
           child: Container(
@@ -26,7 +27,7 @@ void BloodAlertBox(BuildContext context) {
                 children: [
                   Text("Blood Group",
                     style: TextStyle(
-                        color: AppColors.blackcolor,
+                        color: Overseer.theme?Colors.white:AppColors.blackcolor,
                         fontSize: 18.sp,
                         fontWeight: FontWeight.w600
                     ),),
@@ -102,7 +103,7 @@ void BloodAlertBox(BuildContext context) {
                             height: 41.h,
                             width: 120.w,
                             decoration: BoxDecoration(
-                                gradient: AppColors.Gardient3(),
+                                gradient:Overseer.theme?AppColors.GardientD3(): AppColors.Gardient3(),
                                 borderRadius: BorderRadius.circular(15.r)
                             ),
                             child: Center(
